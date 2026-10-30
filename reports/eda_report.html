@@ -1,0 +1,119 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Retail EDA Report</title>
+    <style>body{font-family:Arial,sans-serif;max-width:1050px;margin:40px auto;padding:0 20px;color:#222}
+    h1,h2{color:#17365d}.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+    .kpi{background:#f2f5f9;padding:16px;border-radius:8px}.value{font-size:1.35rem;font-weight:bold}
+    img{width:100%;height:auto;border:1px solid #ddd;border-radius:6px}table{border-collapse:collapse;width:100%}
+    td,th{padding:9px;border-bottom:1px solid #ddd;text-align:left}</style></head><body>
+    <h1>Retail Transactions - Exploratory Data Analysis</h1>
+    <p>Generated from a synthetic teaching dataset. Currency is illustrative (₹); results are not real business performance.</p>
+    <div class="kpis">
+      <div class="kpi">Transactions<div class="value">2,500</div></div>
+      <div class="kpi">Customers<div class="value">800</div></div>
+      <div class="kpi">Revenue<div class="value">₹33,369,516.88</div></div>
+      <div class="kpi">Profit<div class="value">₹10,888,911.35</div></div>
+      <div class="kpi">Average order value<div class="value">₹13,347.81</div></div>
+      <div class="kpi">Overall profit margin<div class="value">32.6%</div></div>
+    </div>
+    <h2>Data quality audit</h2>
+    <table><tr><th>Metric</th><th>Result</th></tr>
+    <tr><td>Raw rows</td><td>2512</td></tr>
+    <tr><td>Exact duplicates removed</td><td>12</td></tr>
+    <tr><td>Rows after cleaning</td><td>2500</td></tr>
+    <tr><td>Missing values after cleaning</td><td>0</td></tr>
+    <tr><td>Quantity outliers flagged</td><td>5</td></tr></table>
+    <h2>Key findings</h2><ul>
+    <li>Highest-revenue category: <b>Electronics</b> (₹16,329,093.82).</li>
+    <li>Highest-revenue region: <b>North</b> (₹8,386,805.98).</li>
+    <li>Overall profit margin: <b>32.6%</b>.</li>
+    <li>Highest-revenue month: <b>2025-12</b> (₹1,900,742.71).</li>
+    </ul>
+    <h2>Category summary</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>category</th>
+      <th>revenue</th>
+      <th>profit</th>
+      <th>quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Electronics</td>
+      <td>16,329,093.82</td>
+      <td>5,189,340.91</td>
+      <td>1851</td>
+    </tr>
+    <tr>
+      <td>Home &amp; Kitchen</td>
+      <td>7,636,255.47</td>
+      <td>2,568,808.70</td>
+      <td>1744</td>
+    </tr>
+    <tr>
+      <td>Clothing</td>
+      <td>4,852,848.98</td>
+      <td>1,613,273.89</td>
+      <td>1926</td>
+    </tr>
+    <tr>
+      <td>Sports</td>
+      <td>4,005,734.07</td>
+      <td>1,341,364.46</td>
+      <td>1274</td>
+    </tr>
+    <tr>
+      <td>Books</td>
+      <td>545,584.54</td>
+      <td>176,123.39</td>
+      <td>868</td>
+    </tr>
+  </tbody>
+</table>
+    <h2>Regional summary</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>region</th>
+      <th>revenue</th>
+      <th>profit</th>
+      <th>orders</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>North</td>
+      <td>8,386,805.98</td>
+      <td>2,720,352.68</td>
+      <td>613</td>
+    </tr>
+    <tr>
+      <td>South</td>
+      <td>7,332,529.48</td>
+      <td>2,418,987.80</td>
+      <td>547</td>
+    </tr>
+    <tr>
+      <td>Central</td>
+      <td>6,133,165.59</td>
+      <td>1,878,773.98</td>
+      <td>455</td>
+    </tr>
+    <tr>
+      <td>West</td>
+      <td>5,992,703.95</td>
+      <td>1,981,225.27</td>
+      <td>474</td>
+    </tr>
+    <tr>
+      <td>East</td>
+      <td>5,524,311.88</td>
+      <td>1,889,571.62</td>
+      <td>411</td>
+    </tr>
+  </tbody>
+</table>
+    <section><h2>Monthly Revenue Trend</h2><img src="figures/monthly_revenue.png" alt="Monthly Revenue Trend"></section><section><h2>Revenue by Category</h2><img src="figures/revenue_by_category.png" alt="Revenue by Category"></section><section><h2>Revenue by Region</h2><img src="figures/revenue_by_region.png" alt="Revenue by Region"></section><section><h2>Order Sales Distribution</h2><img src="figures/sales_distribution.png" alt="Order Sales Distribution"></section><section><h2>Numeric Correlation Heatmap</h2><img src="figures/correlation_heatmap.png" alt="Numeric Correlation Heatmap"></section><section><h2>Quantity Outlier Review</h2><img src="figures/quantity_boxplot.png" alt="Quantity Outlier Review"></section>
+    <h2>Interpretation and limitations</h2>
+    <p>This report is descriptive, not causal. The sample data is synthetically generated and contains designed data-quality issues.
+    Outliers are flagged for investigation rather than automatically deleted. Before using similar methods on real data,
+    validate business definitions (especially revenue, cost, discounts, returns, and tax treatment) with the data owner.</p>
+    </body></html>
